@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mylogin/utilities/color.dart';
 import 'package:mylogin/utilities/sizes.dart';
-import 'package:mylogin/widget/registerscreen.dart';
+import 'package:mylogin/screens/registerscreen.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,14 +86,14 @@ Widget mainbody(context) {
                   SizedBox(
                     height: 50,
                     width: screenwidth - AppSizes.fifty,
-                    child: loginButton(),
+                    child: register_button(),
                   ),
                   //Don't have an account yet? text and Register  button Row
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Don't have an account yet? ",
                         style: TextStyle(
                           color: Colors.black,
@@ -131,12 +131,9 @@ Widget mainbody(context) {
 Widget register(context) {
   return TextButton(
     onPressed: (() {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: ((context) {
-          return RegisterPage();
-        }))
-          );
+      Navigator.push(context, MaterialPageRoute(builder: ((context) {
+        return RegisterPage();
+      })));
     }),
     child: Text(
       "Register here",
@@ -148,8 +145,8 @@ Widget register(context) {
   );
 }
 
-//LoginButton Function
-Widget loginButton() {
+//register_button Function
+Widget register_button() {
   return ElevatedButton(
     onPressed: (() {}),
     child: Text(
